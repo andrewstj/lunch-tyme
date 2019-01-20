@@ -19,7 +19,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 This simple app demonstrates the following:
 * React
 * Bootstrap (Cards and Collapse)
-* Google Maps API
+* Google Maps API (note, API is locked down to demo site)
 * Responsive columns for Phone and Tablet
 
 ## What more to add?
