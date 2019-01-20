@@ -24,6 +24,10 @@
   font-weight: 600;
 }
 
+.card-subtitle {
+  font-family: "Avenir Next", serif;
+}
+
 .card-img-overlay {
   top: auto;
   position: absolute;
