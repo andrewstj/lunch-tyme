@@ -18,7 +18,7 @@
     "typescript": "3.2.4"
   },
   "scripts": {
-    "_format": "prettier --write src/*.ts* || echo \"Failed to format. Continuing...\"",
+    "_format": "prettier --write  \"src/**/*.{ts,tsx,css}\" || echo \"Failed to format. Continuing...\"",
     "start": "npm run _format && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

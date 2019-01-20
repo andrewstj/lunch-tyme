@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./restaurant-card.css";
-import { Restaurant } from "./models/restaurant";
+import { Restaurant } from "../business/models/restaurant";
 import Card from "react-bootstrap/es/Card";
 import Collapse from "react-bootstrap/es/Collapse";
 import RestaurantDetails from "./restaurant-details";

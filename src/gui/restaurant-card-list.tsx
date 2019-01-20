@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import "./restaurant-card.css";
-import { Restaurant } from "./models/restaurant";
+import { Restaurant } from "../business/models/restaurant";
 import RestaurantCard from "./restaurant-card";
 
 interface Props {
