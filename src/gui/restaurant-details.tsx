@@ -3,7 +3,12 @@ import "./restaurant-card.css";
 import { Restaurant } from "../business/models/restaurant";
 import Card from "react-bootstrap/es/Card";
 import Map from "./map";
-import { CONTAINER_ITEM, DETAIL_HEADER, DETAIL_INFORMATION } from "./styles";
+import {
+  CONTAINER_ITEM,
+  DETAIL_HEADER,
+  DETAIL_INFORMATION,
+  LARGE_VERTICAL_BREAK
+} from "./styles";
 
 interface Props {
   restaurant: Restaurant;
@@ -36,11 +41,12 @@ class RestaurantDetails extends React.PureComponent<Props> {
     return (
       <div style={DETAIL_INFORMATION}>
         <Card.Body>
-          {this.props.restaurant.location.address} <br />
-          {this.props.restaurant.location.city},{" "}
-          {this.props.restaurant.location.state}{" "}
-          {this.props.restaurant.location.postalCode} <br />
-          <br />
+          <div>{this.props.restaurant.location.address}</div>
+          <div>
+            {this.props.restaurant.location.city},{" "}
+            {this.props.restaurant.location.state}{" "}
+            {this.props.restaurant.location.postalCode}
+          </div>
           {this.renderContactInformation()}
         </Card.Body>
       </div>
@@ -49,14 +55,12 @@ class RestaurantDetails extends React.PureComponent<Props> {
 
   private renderContactInformation() {
     if (this.props.restaurant.contact) {
-      return (
-        <div>
+      return [
+        <div style={LARGE_VERTICAL_BREAK}>
           {this.props.restaurant.contact.formattedPhone}
-          <br />
-          <br />
-          {this.renderTwitter()}
-        </div>
-      );
+        </div>,
+        <div style={LARGE_VERTICAL_BREAK}>{this.renderTwitter()}</div>
+      ];
     }
   }
 

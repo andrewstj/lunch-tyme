@@ -7,6 +7,10 @@ export const CONTAINER_ITEM: CSSProperties = {
   width: "100%"
 };
 
+export const LARGE_VERTICAL_BREAK: CSSProperties = {
+  paddingTop: "26px"
+};
+
 export const DETAIL_HEADER: CSSProperties = {
   ...CONTAINER_ITEM,
   backgroundColor: "#34B379",

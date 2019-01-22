@@ -1,3 +1,7 @@
+.body {
+  line-height: 1;
+}
+
 .cell img {
   display: block;
 }
@@ -33,6 +37,12 @@
   margin-top: 0;
   font-family: "Avenir Next", arial;
   font-size: 12px;
+}
+
+.card-body {
+  padding: 16px 0 0 12px;
+  font-family: "Avenir Next", arial;
+  font-size: 16px;
 }
 
 .card-img-overlay {
