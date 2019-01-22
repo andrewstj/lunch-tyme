@@ -19,6 +19,9 @@
   }
 }
 
+.card {
+  border: 0;
+}
 .card-title {
   font-family: "Avenir Next", serif;
   font-weight: 600;
@@ -40,7 +43,6 @@
 
 .img-gradient {
   position: relative;
-  display: inline-block;
 }
 
 .img-gradient::after {

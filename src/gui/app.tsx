@@ -19,8 +19,10 @@ class App extends PureComponent<{}, State> {
   render() {
     if (this.state.restaurants.length) {
       return (
-        <div>
-          <RestaurantCardList restaurants={this.state.restaurants} />
+        <div className="container">
+          <div className="grid">
+            <RestaurantCardList restaurants={this.state.restaurants} />
+          </div>
         </div>
       );
     }

@@ -10,15 +10,9 @@ interface Props {
 
 class RestaurantCardList extends React.Component<Props, {}> {
   render() {
-    return (
-      <div className="container">
-        <div className="grid">
-          {this.props.restaurants.map(restaurant => (
-            <RestaurantCard restaurant={restaurant} key={restaurant.name} />
-          ))}
-        </div>
-      </div>
-    );
+    return this.props.restaurants.map(restaurant => (
+      <RestaurantCard restaurant={restaurant} key={restaurant.name} />
+    ));
   }
 }
 
