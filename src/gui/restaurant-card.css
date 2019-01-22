@@ -23,6 +23,16 @@
   }
 }
 
+.navbar {
+  background: #43e895;
+  color: #ffffff;
+  font-family: "Avenir Next", arial;
+  font-weight: 600;
+  font-size: 17px;
+  height: 80px;
+  justify-content: center;
+}
+
 .card {
   border: 0;
 }
