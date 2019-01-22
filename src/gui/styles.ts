@@ -10,7 +10,8 @@ export const CONTAINER_ITEM: CSSProperties = {
 export const DETAIL_HEADER: CSSProperties = {
   ...CONTAINER_ITEM,
   backgroundColor: "#34B379",
-  padding: ".75rem"
+  padding: "12px",
+  height: "60px"
 };
 
 export const DETAIL_INFORMATION: CSSProperties = {

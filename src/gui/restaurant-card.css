@@ -23,12 +23,16 @@
   border: 0;
 }
 .card-title {
-  font-family: "Avenir Next", serif;
+  font-family: "Avenir Next", arial;
   font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
 }
 
 .card-subtitle {
-  font-family: "Avenir Next", serif;
+  margin-top: 0;
+  font-family: "Avenir Next", arial;
+  font-size: 12px;
 }
 
 .card-img-overlay {
@@ -36,8 +40,8 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  left: 0;
-  padding: 1.25rem;
+  left: 6px;
+  padding: 6px;
   z-index: 1;
 }
 
