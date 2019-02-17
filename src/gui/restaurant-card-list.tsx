@@ -8,11 +8,30 @@ interface Props {
   restaurants: Restaurant[];
 }
 
-class RestaurantCardList extends React.Component<Props, {}> {
+interface State {
+  expandedRestaurantName: string | null;
+}
+
+class RestaurantCardList extends React.PureComponent<Props, State> {
+  readonly state: State = { expandedRestaurantName: null };
+
   render() {
     return this.props.restaurants.map(restaurant => (
-      <RestaurantCard restaurant={restaurant} key={restaurant.name} />
+      <RestaurantCard
+        restaurant={restaurant}
+        key={restaurant.name}
+        expanded={this.state.expandedRestaurantName === restaurant.name}
+        toggleCard={this.toggleCard.bind(this)}
+      />
     ));
+  }
+
+  toggleCard(restaurantName: string): void {
+    const isCurrentlySelected: boolean =
+      this.state.expandedRestaurantName === restaurantName;
+    this.setState({
+      expandedRestaurantName: isCurrentlySelected ? null : restaurantName
+    });
   }
 }
 

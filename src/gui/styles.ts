@@ -30,7 +30,7 @@ export const MAP: CSSProperties = {
   width: "100%"
 };
 
-export const MAP_POINT_STYLE: CSSProperties = {
+export const MAP_POINT: CSSProperties = {
   position: "absolute",
   width: RADIUS,
   height: RADIUS,

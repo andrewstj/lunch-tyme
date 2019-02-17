@@ -7,20 +7,17 @@ import RestaurantDetails from "./restaurant-details";
 
 interface Props {
   restaurant: Restaurant;
-}
-interface State {
   expanded: boolean;
+  toggleCard: (restaurantName: string) => void;
 }
 
-class RestaurantCard extends React.PureComponent<Props, State> {
-  readonly state: State = { expanded: false };
-
+class RestaurantCard extends React.PureComponent<Props, {}> {
   render() {
     return (
       <div className="cell">
         <Card
           className="bg-dark text-white img-gradient"
-          onClick={() => this.setState({ expanded: !this.state.expanded })}
+          onClick={() => this.props.toggleCard(this.props.restaurant.name)}
           aria-controls="collapse-details"
         >
           <Card.Img
@@ -32,7 +29,7 @@ class RestaurantCard extends React.PureComponent<Props, State> {
             <Card.Subtitle>{this.props.restaurant.category}</Card.Subtitle>
           </Card.ImgOverlay>
         </Card>
-        <Collapse in={this.state.expanded}>
+        <Collapse in={this.props.expanded}>
           <div id="collapse-details">
             <RestaurantDetails restaurant={this.props.restaurant} />
           </div>
