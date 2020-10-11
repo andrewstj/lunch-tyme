@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./restaurant-card.css";
 import { Restaurant } from "../business/models/restaurant";
-import Card from "react-bootstrap/es/Card";
+import Card from "react-bootstrap/Card";
 import Map from "./map";
 import {
   CONTAINER_ITEM,

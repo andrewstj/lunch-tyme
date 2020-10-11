@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Restaurant } from "../business/models/restaurant";
 import RestaurantCardList from "./restaurant-card-list";
 import { restaurantRepository } from "../business/restaurant-repository";
-import Navbar from "react-bootstrap/es/Navbar";
+import Navbar from "react-bootstrap/Navbar";
 
 interface State {
   restaurants: Restaurant[];
