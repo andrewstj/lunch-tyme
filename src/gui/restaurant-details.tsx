@@ -1,8 +1,8 @@
 import * as React from "react";
-import "./restaurant-card.css";
+import Card from "react-bootstrap/Card";
 import { Restaurant } from "../business/models/restaurant";
-import Card from "react-bootstrap/es/Card";
 import Map from "./map";
+import "./restaurant-card.css";
 import {
   CONTAINER_ITEM,
   DETAIL_HEADER,
@@ -14,60 +14,57 @@ interface Props {
   restaurant: Restaurant;
 }
 
-class RestaurantDetails extends React.PureComponent<Props> {
-  render() {
-    return (
-      <Card className="bg-dark text-white " style={CONTAINER_ITEM}>
-        <Map
-          lat={this.props.restaurant.location.lat}
-          lng={this.props.restaurant.location.lng}
-        />
-        {this.renderHeader()}
-        {this.renderDetails()}
-      </Card>
-    );
-  }
-
-  private renderHeader() {
+const RestaurantDetails: React.FunctionComponent<Props> = (props: Props) => {
+  const renderHeader = () => {
     return (
       <div style={DETAIL_HEADER}>
-        <Card.Title>{this.props.restaurant.name}</Card.Title>
-        <Card.Subtitle>{this.props.restaurant.category}</Card.Subtitle>
+        <Card.Title>{props.restaurant.name}</Card.Title>
+        <Card.Subtitle>{props.restaurant.category}</Card.Subtitle>
       </div>
     );
-  }
+  };
 
-  private renderDetails() {
+  const renderDetails = () => {
     return (
       <div style={DETAIL_INFORMATION}>
         <Card.Body>
-          <div>{this.props.restaurant.location.address}</div>
+          <div>{props.restaurant.location.address}</div>
           <div>
-            {this.props.restaurant.location.city},{" "}
-            {this.props.restaurant.location.state}{" "}
-            {this.props.restaurant.location.postalCode}
+            {props.restaurant.location.city}, {props.restaurant.location.state}{" "}
+            {props.restaurant.location.postalCode}
           </div>
-          {this.renderContactInformation()}
+          {renderContactInformation()}
         </Card.Body>
       </div>
     );
-  }
+  };
 
-  private renderContactInformation() {
-    if (this.props.restaurant.contact) {
+  const renderContactInformation = () => {
+    if (props.restaurant.contact) {
       return [
         <div style={LARGE_VERTICAL_BREAK}>
-          {this.props.restaurant.contact.formattedPhone}
+          {props.restaurant.contact.formattedPhone}
         </div>,
-        <div style={LARGE_VERTICAL_BREAK}>{this.renderTwitter()}</div>
+        <div style={LARGE_VERTICAL_BREAK}>{renderTwitter()}</div>
       ];
     }
-  }
+  };
 
-  private renderTwitter() {
-    if (this.props.restaurant.contact!.twitter) {
-      return <span>@{this.props.restaurant.contact!.twitter}</span>;
+  const renderTwitter = () => {
+    if (props.restaurant.contact!.twitter) {
+      return <span>@{props.restaurant.contact!.twitter}</span>;
     }
-  }
-}
+  };
+
+  return (
+    <Card className="bg-dark text-white " style={CONTAINER_ITEM}>
+      <Map
+        lat={props.restaurant.location.lat}
+        lng={props.restaurant.location.lng}
+      />
+      {renderHeader()}
+      {renderDetails()}
+    </Card>
+  );
+};
 export default RestaurantDetails;

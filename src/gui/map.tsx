@@ -11,24 +11,22 @@ interface Props {
 
 const DEFAULT_ZOOM: number = 15;
 
-class Map extends React.PureComponent<Props> {
-  render() {
-    return (
+const Map: React.FunctionComponent<Props> = (props: Props) => {
+  return (
       <div style={MAP}>
         <GoogleMapReact
           bootstrapURLKeys={{
             key: "AIzaSyDzrEUNGDAnNhqN4hSAZlIcVTEHDGql4-4"
           }}
           defaultCenter={{
-            lat: this.props.lat,
-            lng: this.props.lng
+            lat: props.lat,
+            lng: props.lng
           }}
           defaultZoom={DEFAULT_ZOOM}
         >
-          <MapItem lat={this.props.lat} lng={this.props.lng} />
+          <MapItem />
         </GoogleMapReact>
       </div>
     );
-  }
 }
 export default Map;
